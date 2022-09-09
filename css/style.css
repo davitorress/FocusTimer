@@ -1,0 +1,116 @@
+/* Roboto */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	font-size: 62.5%;
+
+	--fc-text: #323238;
+	--ic-primary: #323238;
+	--ic-secondary: #fff;
+
+	--bg-card-off: #e1e1e6;
+	--bg-card-on: #02799d;
+}
+
+body {
+	min-height: 100vh;
+	display: grid;
+	place-content: center;
+
+	color: var(--fc-text);
+	font-family: "Roboto", sans-serif;
+
+	background-color: #fff;
+}
+
+ion-icon {
+	color: var(--ic-primary);
+}
+
+.hide {
+	display: none;
+}
+
+main {
+	display: flex;
+	gap: 19rem;
+}
+
+.timer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 2.4rem;
+}
+
+.timer h1 {
+	font-weight: 500;
+	font-size: 12.6rem;
+	line-height: 13rem;
+}
+
+.timer ion-icon {
+	font-size: 4.8rem;
+}
+
+.controls {
+	width: 100%;
+
+	display: flex;
+	justify-content: space-between;
+}
+
+button {
+	cursor: pointer;
+
+	border: none;
+	background: transparent;
+}
+
+.sounds {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	gap: 3.2rem;
+}
+
+.card {
+	min-width: 140px;
+	height: 150px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	cursor: pointer;
+	transition: background 0.3s;
+
+	border-radius: 2.4rem;
+	background-color: var(--bg-card-off);
+}
+
+.card ion-icon {
+	font-size: 5.6rem;
+	transition: color 0.3s;
+}
+
+.card.card-on {
+	background-color: var(--bg-card-on);
+}
+
+.card.card-on ion-icon {
+	color: var(--ic-secondary);
+}
+
+.card:hover {
+	background-color: var(--bg-card-on);
+}
+
+.card:hover ion-icon {
+	color: var(--ic-secondary);
+}
