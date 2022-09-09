@@ -1,8 +1,8 @@
 export default function Sounds() {
-	const soundForest = new Audio("./assets/sound/Floresta.wav");
-	const soundRain = new Audio("./assets/sound/Chuva.wav");
-	const soundStore = new Audio("./assets/sound/Cafeteria.wav");
-	const soundFireplace = new Audio("./assets/sound/Lareira.wav");
+	const soundForest = new Audio("assets/sound/Floresta.wav");
+	const soundRain = new Audio("assets/sound/Chuva.wav");
+	const soundStore = new Audio("assets/sound/Cafeteria.wav");
+	const soundFireplace = new Audio("assets/sound/Lareira.wav");
 
 	soundForest.loop = true;
 	soundRain.loop = true;
