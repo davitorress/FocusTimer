@@ -8,9 +8,22 @@
 
 		<title>FocusTimer</title>
 
-		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="stylesheet" href="./css/global.css" />
+		<link rel="stylesheet" href="./css/theme.css" />
+		<link rel="stylesheet" href="./css/timer.css" />
+		<link rel="stylesheet" href="./css/sounds.css" />
 	</head>
 	<body>
+		<div class="switch">
+			<button class="sun">
+				<ion-icon name="sunny-outline"></ion-icon>
+			</button>
+
+			<button class="moon hide">
+				<ion-icon name="moon-outline"></ion-icon>
+			</button>
+		</div>
+
 		<main>
 			<div class="timer">
 				<h1><span class="minutes">25</span>:<span class="seconds">00</span></h1>
@@ -41,28 +54,33 @@
 			<div class="sounds">
 				<div class="card" id="card-forest">
 					<ion-icon name="leaf-outline"></ion-icon>
+
+					<input type="range" class="volume" min="0" max="100" value="50" />
 				</div>
 
 				<div class="card" id="card-rain">
 					<ion-icon name="rainy-outline"></ion-icon>
+
+					<input type="range" class="volume" min="0" max="100" value="50" />
 				</div>
 
 				<div class="card" id="card-store">
 					<ion-icon name="storefront-outline"></ion-icon>
+
+					<input type="range" class="volume" min="0" max="100" value="50" />
 				</div>
 
 				<div class="card" id="card-fireplace">
 					<ion-icon name="bonfire-outline"></ion-icon>
+
+					<input type="range" class="volume" min="0" max="100" value="50" />
 				</div>
 			</div>
 		</main>
 
 		<script type="module" src="./js/index.js"></script>
 
-		<script
-			type="module"
-			src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-		></script>
+		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 	</body>
 </html>

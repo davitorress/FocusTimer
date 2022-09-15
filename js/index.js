@@ -1,12 +1,18 @@
 import {
 	minutesDisplay,
 	secondsDisplay,
+	buttonSun,
+	buttonMoon,
 	buttonPlay,
 	buttonPause,
 	cardForest,
 	cardRain,
 	cardStore,
 	cardFireplace,
+	volumeForest,
+	volumeRain,
+	volumeStore,
+	volumeFireplace,
 } from "./elements.js";
 
 import Controls from "./controls.js";
@@ -22,6 +28,14 @@ const controls = Controls({
 	cardRain,
 	cardStore,
 	cardFireplace,
+
+	volumeForest,
+	volumeRain,
+	volumeStore,
+	volumeFireplace,
+
+	buttonSun,
+	buttonMoon,
 });
 
 const sounds = Sounds();
@@ -29,10 +43,8 @@ const sounds = Sounds();
 const timer = Timer({
 	minutesDisplay,
 	secondsDisplay,
-
-	resetAudio: sounds.reset,
-	resetControls: controls.resetButtons,
-	resetCards: controls.resetCards,
+	controls,
+	sounds,
 });
 
 Events({

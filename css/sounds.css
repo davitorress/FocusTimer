@@ -1,0 +1,123 @@
+.sounds {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	gap: 3.2rem;
+}
+
+.card {
+	min-width: 140px;
+	height: 150px;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-direction: column;
+
+	cursor: pointer;
+	transition: background 0.3s;
+
+	border-radius: 2.4rem;
+	background-color: var(--bg-card-off);
+}
+
+.card ion-icon {
+	font-size: 5.6rem;
+	transition: color 0.3s;
+}
+
+.card .volume {
+	width: 80%;
+	height: 0.5rem;
+
+	cursor: pointer;
+	outline: none;
+	appearance: none;
+	-webkit-appearance: none;
+
+	border-radius: 0.5rem;
+	background-color: var(--ic-primary);
+}
+
+.card .volume:focus {
+	outline: none;
+}
+
+.card .volume::-webkit-slider-thumb {
+	width: 1.6rem;
+	height: 1.6rem;
+
+	cursor: pointer;
+	appearance: none;
+	-webkit-appearance: none;
+
+	border: 0;
+	border-radius: 50%;
+	background-color: var(--ic-primary);
+}
+.card .volume::-moz-range-thumb {
+	width: 1.6rem;
+	height: 1.6rem;
+
+	cursor: pointer;
+	appearance: none;
+	-moz-appearance: none;
+
+	border: 0;
+	border-radius: 50%;
+	background-color: var(--ic-primary);
+}
+.card .volume::-ms-thumb {
+	width: 1.6rem;
+	height: 1.6rem;
+
+	cursor: pointer;
+	appearance: none;
+
+	border: 0;
+	border-radius: 50%;
+	background-color: var(--ic-primary);
+}
+
+.card.card-on {
+	background-color: var(--bg-card-on);
+}
+
+.card.card-on ion-icon {
+	color: var(--ic-secondary);
+}
+
+.card.card-on .volume {
+	background-color: var(--ic-secondary);
+}
+
+.card.card-on .volume::-webkit-slider-thumb {
+	background-color: var(--ic-secondary);
+}
+.card.card-on .volume::-moz-range-thumb {
+	background-color: var(--ic-secondary);
+}
+.card.card-on .volume::-ms-thumb {
+	background-color: var(--ic-secondary);
+}
+
+.card:hover {
+	background-color: var(--bg-card-on);
+}
+
+.card:hover ion-icon {
+	color: var(--ic-secondary);
+}
+
+.card:hover .volume {
+	background: var(--ic-secondary);
+}
+
+.card:hover .volume::-webkit-slider-thumb {
+	background: var(--ic-secondary);
+}
+.card:hover .volume::-moz-range-thumb {
+	background: var(--ic-secondary);
+}
+.card:hover .volume::-ms-thumb {
+	background: var(--ic-secondary);
+}

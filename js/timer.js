@@ -2,9 +2,8 @@ export default function Timer({
 	minutesDisplay,
 	secondsDisplay,
 
-	resetAudio,
-	resetControls,
-	resetCards,
+	controls,
+	sounds,
 }) {
 	let timerTimeOut;
 	let minutes = getMinutes();
@@ -17,24 +16,14 @@ export default function Timer({
 		return Number(secondsDisplay.textContent);
 	}
 
-	function plusTime() {
+	function addMinutes() {
 		let newMinutes = getMinutes() + 5;
-
-		if (newMinutes >= 60) {
-			updateTime(60);
-		} else {
-			updateTime(newMinutes);
-		}
+		newMinutes >= 60 ? updateTime(60) : updateTime(newMinutes);
 	}
 
-	function minusTime() {
+	function removeMinutes() {
 		let newMinutes = getMinutes() - 5;
-
-		if (newMinutes <= 5) {
-			updateTime(5);
-		} else {
-			updateTime(newMinutes);
-		}
+		newMinutes <= 5 ? updateTime(5) : updateTime(newMinutes);
 	}
 
 	function updateTime(newMinutes) {
@@ -51,12 +40,12 @@ export default function Timer({
 	}
 
 	function pause() {
-		resetControls();
+		controls.resetButtons();
 		clearTimeout(timerTimeOut);
 	}
 
 	function reset() {
-		resetControls();
+		controls.resetButtons();
 		updateDisplay();
 		clearTimeout(timerTimeOut);
 	}
@@ -68,8 +57,9 @@ export default function Timer({
 			const isFinished = minutes <= 0 && seconds <= 0;
 
 			if (isFinished) {
-				resetAudio();
-				resetCards();
+				sounds.reset();
+				controls.resetCards();
+				controls.timeEnd();
 				updateDisplay();
 
 				return;
@@ -88,8 +78,8 @@ export default function Timer({
 	return {
 		getMinutes,
 		getSeconds,
-		plusTime,
-		minusTime,
+		addMinutes,
+		removeMinutes,
 		updateTime,
 		updateDisplay,
 		pause,

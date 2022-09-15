@@ -4,41 +4,32 @@ export default function Sounds() {
 	const soundStore = new Audio("assets/sound/Cafeteria.wav");
 	const soundFireplace = new Audio("assets/sound/Lareira.wav");
 
+	const buttonPressAudio = new Audio(
+		"https://github.com/maykbrito/automatic-video-creator/blob/master/audios/button-press.wav?raw=true"
+	);
+	const kitchenTimer = new Audio(
+		"https://github.com/maykbrito/automatic-video-creator/blob/master/audios/kichen-timer.mp3?raw=true"
+	);
+
 	soundForest.loop = true;
 	soundRain.loop = true;
 	soundStore.loop = true;
 	soundFireplace.loop = true;
 
-	function playForest() {
-		soundForest.play();
+	soundForest.volume = 0.5;
+	soundRain.volume = 0.5;
+	soundStore.volume = 0.5;
+	soundFireplace.volume = 0.5;
 
-		soundRain.pause();
-		soundStore.pause();
-		soundFireplace.pause();
+	buttonPressAudio.volume = 0.5;
+	kitchenTimer.volume = 0.5;
+
+	function pressButton() {
+		buttonPressAudio.play();
 	}
 
-	function playRain() {
-		soundRain.play();
-
-		soundForest.pause();
-		soundStore.pause();
-		soundFireplace.pause();
-	}
-
-	function playStore() {
-		soundStore.play();
-
-		soundForest.pause();
-		soundRain.pause();
-		soundFireplace.pause();
-	}
-
-	function playFireplace() {
-		soundFireplace.play();
-
-		soundForest.pause();
-		soundRain.pause();
-		soundStore.pause();
+	function timeEnd() {
+		kitchenTimer.play();
 	}
 
 	function reset() {
@@ -48,11 +39,19 @@ export default function Sounds() {
 		soundFireplace.pause();
 	}
 
+	function setVolume(audio, volume) {
+		audio.volume = volume / 100;
+	}
+
 	return {
-		playForest,
-		playRain,
-		playStore,
-		playFireplace,
+		soundForest,
+		soundRain,
+		soundStore,
+		soundFireplace,
+
+		pressButton,
+		timeEnd,
 		reset,
+		setVolume,
 	};
 }

@@ -1,0 +1,42 @@
+.sun ion-icon {
+	color: #000;
+}
+
+.moon ion-icon {
+	color: #fff;
+}
+
+body.dark-theme {
+	color: var(--fc-text-dark);
+	background-color: var(--bg-dark);
+}
+
+body.dark-theme ion-icon {
+	color: var(--ic-primary-dark);
+}
+
+body.dark-theme .card {
+	background-color: var(--bg-card-off-dark);
+}
+
+body.dark-theme .card .volume {
+	background-color: var(--ic-primary-dark);
+}
+
+body.dark-theme .card .volume::-webkit-slider-thumb {
+	background-color: var(--ic-primary-dark);
+}
+body.dark-theme .card .volume::-moz-range-thumb {
+	background-color: var(--ic-primary-dark);
+}
+body.dark-theme .card .volume::-ms-thumb {
+	background-color: var(--ic-primary-dark);
+}
+
+body.dark-theme .card.card-on {
+	background-color: var(--bg-card-on-dark);
+}
+
+body.dark-theme .card:hover {
+	background-color: var(--bg-card-on-dark);
+}

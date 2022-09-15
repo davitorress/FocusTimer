@@ -1,0 +1,68 @@
+/* Roboto */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	font-size: 62.5%;
+
+	--fc-text: #323238;
+	--fc-text-dark: #fff;
+
+	--ic-primary: #323238;
+	--ic-secondary: #fff;
+	--ic-primary-dark: #c4c4cc;
+
+	--bg-card-off: #e1e1e6;
+	--bg-card-off-dark: #29292e;
+
+	--bg-card-on: #02799d;
+	--bg-card-on-dark: #0a3442;
+
+	--bg-dark: #121214;
+}
+
+body {
+	min-height: 100vh;
+	display: grid;
+	place-content: center;
+
+	color: var(--fc-text);
+	font-family: "Roboto", sans-serif;
+
+	background-color: #fff;
+}
+
+main {
+	display: flex;
+	gap: 19rem;
+}
+
+.hide {
+	display: none;
+}
+
+ion-icon {
+	color: var(--ic-primary);
+}
+
+button {
+	cursor: pointer;
+
+	border: none;
+	background: transparent;
+}
+
+.switch {
+	top: 6.4rem;
+	right: 6.4rem;
+	position: absolute;
+}
+
+.switch button ion-icon {
+	font-size: 3.6rem;
+}
